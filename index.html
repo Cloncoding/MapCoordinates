@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Mein Mappy</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen">
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/layers/FeatureLayer"
+        ], (Map, MapView, FeatureLayer) => {
+
+            const renderer = {
+                type: "simple",
+                symbol: {
+                    type: "simple-marker",
+                    style: "circle",
+                    color: [77, 187, 230, 1],
+                    outline: {
+                        color: [255, 128, 0, 0.5],
+                        width: 0.2
+                    },
+                    size: "8px"
+                },
+                visualVariables: [
+                    {
+                        type: "size",
+                        field: "POP",
+                        minDataValue: 5,
+                        maxDataValue: 5000000,
+                        minSize: 4,
+                        maxSize: 25
+                    }
+                ]
+            };
+
+            const featureLayer = new FeatureLayer({
+                url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/World_Cities/FeatureServer/",
+                renderer: renderer
+            });
+
+            const map = new Map({
+                basemap: "dark-gray-vector",
+                layers: [featureLayer]
+            });
+
+            const view = new MapView({
+                container: "viewDiv",
+                map: map,
+                zoom: 10,
+                center: [6.9583, 50.9413]
+            });
+
+            view.on("click", updateCoords);
+
+            function updateCoords(event) {
+                updateCoordinates(event.mapPoint.latitude.toFixed(4), event.mapPoint.longitude.toFixed(4));
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="viewDiv"></div>
+
+    <div id="coordDisplay"></div>
+    <script src="src/coordDisplay.js"></script>
+</body>
+</html>

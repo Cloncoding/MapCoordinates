@@ -1,0 +1,13 @@
+{
+  "name": "weather-map",
+  "version": "0.0.0",
+  "description": "WeatherMap",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  },
+  "eslintConfig": {}
+}

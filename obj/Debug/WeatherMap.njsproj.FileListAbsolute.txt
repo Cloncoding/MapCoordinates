@@ -1,0 +1,3 @@
+C:\Users\Sinan\Desktop\Dev\JavaScript\WeatherMap\obj\Debug\WeatherMap.njsproj.AssemblyReference.cache
+C:\Users\Sinan\Desktop\Dev\JavaScript\WeatherMap\obj\Debug\WeatherMap.njsproj.CoreCompileInputs.cache
+C:\Users\Sinan\Desktop\Dev\JavaScript\WeatherMap\bin\Microsoft.NodejsTools.WebRole.dll

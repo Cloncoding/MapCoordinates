@@ -1,0 +1,27 @@
+Kurze Anleitung zum Starten der Projekte:
+
+Voraussetzungen:
+node.js  - https://nodejs.org/en/download (neuste Version)
+
+Teil-1:
+1. ZIP "WeatherMapTeil1" entpacken
+	Jetzt gibt es zwei Optionen, die Karte anzeigen zu lassen
+	Möglichkeit 1: 
+		2.1. index.html öffnen
+			-> bei Erfolg wird die Karte aus Teil-1 angezeigt
+	Möglichkeit 2: 
+		2.2.1. CMD mit dem Pfad des entpackten Ordners starten
+		2.2.2. "node server.js" in CMD eingeben
+			-> bei Erfolg wird "Server started" geloggt
+		2.2.3. Browser öffnen und "http://localhost:1337/index.html" in URL-Leiste eingeben
+			-> bei Erfolg wird die Karte aus Teil-1 angezeigt
+3. Mit einem Klick in die Karte werden die Koordinaten in dem Feld oben rechts angezeigt
+
+Teil-2:
+1. ZIP "WeatherMapTeil2" entpacken
+2. CMD mit dem Pfad des entpackten Ordners starten
+3. "node server.js" in CMD eingeben
+	-> bei Erfolg wird "Server started" geloggt
+4. Browser öffnen und "http://localhost:1337/index.html" in URL-Leiste eingeben
+	-> bei Erfolg wird die Karte aus Teil-2 angezeigt
+5. Mit einem Klick in die Karte werden die Koordinaten in dem Feld oben rechts sowie die Wettervorhersage für die nächsten 5 Tage in dem Feld Mitte rechts angezeigt
